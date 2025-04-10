@@ -1,0 +1,12 @@
+w=["Hahn","ZeynelHacker","Herr Presher Hat Anton gehäckt"];
+f=n=>{
+  if(n.nodeType==3 && n.textContent.trim()){
+    n.textContent=w[Math.random()*w.length|0];
+    let span=document.createElement("span");
+    span.style.color="hsl(120,100%,"+(50+Math.random()*30)+"%)";
+    n.parentNode.replaceChild(span,n);
+    span.appendChild(n);
+  }
+  n.childNodes&&[...n.childNodes].forEach(f);
+};
+setInterval(()=>f(document.body),6000);
