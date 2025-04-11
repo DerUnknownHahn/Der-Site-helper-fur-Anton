@@ -1,4 +1,4 @@
-w=["Hahn","ZeynelHacker","Herr Presher Hat Anton gehäckt"];
+w=["Hahn","Cucumber","Hacker"];
 f=n=>{
   if(n.nodeType==3 && n.textContent.trim()){
     n.textContent=w[Math.random()*w.length|0];
