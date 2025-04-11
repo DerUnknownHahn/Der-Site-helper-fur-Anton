@@ -1,0 +1,27 @@
+// Список пастельных цветов для фона
+const pastelColors = [
+  '#A8E6CF', // пастельно-зеленый
+  '#D0F0C0', // светлый салатовый
+  '#FFB3BA', // пастельно-розовый
+  '#FFDFD3', // пастельно-оранжевый
+  '#D1C4E9', // пастельно-фиолетовый
+  '#B3E5FC', // пастельно-голубой
+  '#C8E6C9', // мятный
+  '#F8BBD0', // нежно-розовый
+];
+
+let i = 0;
+
+// Функция для применения плавного перехода к элементам
+const applyPastelBackgrounds = () => {
+  document.querySelectorAll('*').forEach(el => {
+    el.style.transition = 'background-color 2s ease';  // Плавный переход за 2 секунды
+    el.style.backgroundColor = pastelColors[i % pastelColors.length];
+  });
+  i++;
+};
+
+// Запуск смены цветов каждые 2 секунды
+setInterval(applyPastelBackgrounds, 2000);
+
+// Для остановки: clearInterval(intervalId);
