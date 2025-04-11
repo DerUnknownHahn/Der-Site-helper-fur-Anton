@@ -1,0 +1,12 @@
+let colors = ['green', 'aqua'];
+let i = 0;
+
+const intervalId = setInterval(() => {
+  document.querySelectorAll('*').forEach(el => {
+    el.style.backgroundColor = colors[i % 2];
+  });
+  i++;
+}, 250);
+
+// Чтобы остановить мигание, выполните:
+// clearInterval(intervalId);
